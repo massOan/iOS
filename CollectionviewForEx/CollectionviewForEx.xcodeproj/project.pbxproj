@@ -16,6 +16,9 @@
 		A33D62B32ABA8B29004007C9 /* CollectionviewForExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D62B22ABA8B29004007C9 /* CollectionviewForExTests.swift */; };
 		A33D62BD2ABA8B29004007C9 /* CollectionviewForExUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D62BC2ABA8B29004007C9 /* CollectionviewForExUITests.swift */; };
 		A33D62BF2ABA8B29004007C9 /* CollectionviewForExUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D62BE2ABA8B29004007C9 /* CollectionviewForExUITestsLaunchTests.swift */; };
+		A33D62D92ABAB6A0004007C9 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D62D82ABAB6A0004007C9 /* Reminder.swift */; };
+		A33D62DE2ABABB0C004007C9 /* RemindCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33D62DC2ABABB0C004007C9 /* RemindCollectionViewCell.swift */; };
+		A33D62DF2ABABB0C004007C9 /* RemindCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A33D62DD2ABABB0C004007C9 /* RemindCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		A33D62B82ABA8B29004007C9 /* CollectionviewForExUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionviewForExUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A33D62BC2ABA8B29004007C9 /* CollectionviewForExUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionviewForExUITests.swift; sourceTree = "<group>"; };
 		A33D62BE2ABA8B29004007C9 /* CollectionviewForExUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionviewForExUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A33D62D82ABAB6A0004007C9 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		A33D62DC2ABABB0C004007C9 /* RemindCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindCollectionViewCell.swift; sourceTree = "<group>"; };
+		A33D62DD2ABABB0C004007C9 /* RemindCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 		A33D628F2ABA8B28004007C9 = {
 			isa = PBXGroup;
 			children = (
+				A33D62D72ABAB585004007C9 /* Models */,
 				A33D629A2ABA8B28004007C9 /* CollectionviewForEx */,
 				A33D62B12ABA8B29004007C9 /* CollectionviewForExTests */,
 				A33D62BB2ABA8B29004007C9 /* CollectionviewForExUITests */,
@@ -106,6 +113,8 @@
 				A33D62A42ABA8B29004007C9 /* Assets.xcassets */,
 				A33D62A62ABA8B29004007C9 /* LaunchScreen.storyboard */,
 				A33D62A92ABA8B29004007C9 /* Info.plist */,
+				A33D62DC2ABABB0C004007C9 /* RemindCollectionViewCell.swift */,
+				A33D62DD2ABABB0C004007C9 /* RemindCollectionViewCell.xib */,
 			);
 			path = CollectionviewForEx;
 			sourceTree = "<group>";
@@ -125,6 +134,14 @@
 				A33D62BE2ABA8B29004007C9 /* CollectionviewForExUITestsLaunchTests.swift */,
 			);
 			path = CollectionviewForExUITests;
+			sourceTree = "<group>";
+		};
+		A33D62D72ABAB585004007C9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A33D62D82ABAB6A0004007C9 /* Reminder.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +251,7 @@
 				A33D62A82ABA8B29004007C9 /* LaunchScreen.storyboard in Resources */,
 				A33D62A52ABA8B29004007C9 /* Assets.xcassets in Resources */,
 				A33D62A32ABA8B28004007C9 /* Main.storyboard in Resources */,
+				A33D62DF2ABABB0C004007C9 /* RemindCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +277,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A33D62A02ABA8B28004007C9 /* ViewController.swift in Sources */,
+				A33D62DE2ABABB0C004007C9 /* RemindCollectionViewCell.swift in Sources */,
 				A33D629C2ABA8B28004007C9 /* AppDelegate.swift in Sources */,
 				A33D629E2ABA8B28004007C9 /* SceneDelegate.swift in Sources */,
+				A33D62D92ABAB6A0004007C9 /* Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
