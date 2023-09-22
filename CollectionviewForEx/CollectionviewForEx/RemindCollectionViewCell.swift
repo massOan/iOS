@@ -2,13 +2,14 @@
 //  RemindCollectionViewCell.swift
 //  CollectionviewForEx
 //
-//  Created by 장익준 on 2023/09/20.
 //
 
 import UIKit
 
 class RemindCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var TodoDescription: UILabel!
+    @IBOutlet weak var TodoTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
