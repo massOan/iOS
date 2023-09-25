@@ -16,8 +16,8 @@ class ViewController: UIViewController{
         collectionView.backgroundColor = .systemBackground
         collectionView.register(UINib(nibName: "RemindCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "RemindCollectionViewCell")
         
+        collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier)
 
-        
         func reminderCellRegistration() ->
         UICollectionView.CellRegistration<UICollectionViewListCell, Reminder > {
             return .init { cell, indexpath, item in
@@ -52,9 +52,20 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource{
         
         cell.TodoDescription.text = reminder.notes
         cell.TodoDescription.sizeToFit()
-    
+        
         cell.layer.cornerRadius = 8
         //
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.identifier, for: indexPath) as! HeaderCollectionReusableView
+        
+        return header
+    }
+ 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout : UICollectionViewLayout, referenceSizeForHeaderInSection section : Int) -> CGSize {
+        return CGSize(width: view.frame.size.width, height: 200)
+    }
+    
 }
