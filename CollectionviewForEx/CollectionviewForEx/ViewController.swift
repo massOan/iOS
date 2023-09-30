@@ -26,10 +26,12 @@ class ViewController: UIViewController{
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
                                 withReuseIdentifier: String(describing: CustomFooterView.self))
         
+        reminderCellRegistration()
+        
         func reminderCellRegistration() ->
         UICollectionView.CellRegistration<UICollectionViewListCell, Reminder > {
             return .init { cell, indexpath, item in
-                
+                var contentConfiguration = UIListContentConfiguration.valueCell()
                 var configuration = cell.defaultContentConfiguration()
                 configuration.text = "Loading"
                 configuration.textProperties.color = .darkGray
@@ -37,7 +39,22 @@ class ViewController: UIViewController{
                 
                 var backgroundConfig = UIBackgroundConfiguration.listPlainCell()
                 cell.backgroundConfiguration = backgroundConfig
+                
+                
+                cell.contentConfiguration = contentConfiguration
+                  cell.accessories = [
+                      .outlineDisclosure(displayed: .always),
+                      .disclosureIndicator(displayed: .always),
+                      .reorder(displayed: .always),
+                      .checkmark(displayed: .always)
+                      
+                  ]
+                
             }
+            
+            
+            
+            
         }
         
     }
@@ -46,11 +63,11 @@ class ViewController: UIViewController{
 extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
+        return CGSize(width: view.frame.width, height: 100)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
+        return CGSize(width: view.frame.width, height: 100)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -59,7 +76,7 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 50)
+        return CGSize(width: view.frame.width, height: 100)
     }
     
     
@@ -75,7 +92,14 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,
         cell.TodoDescription.text = reminder.notes
         cell.TodoDescription.sizeToFit()
         
-        cell.layer.cornerRadius = 8
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 10
+        cell.layer.borderWidth = 1
+        
+        cell.layer.masksToBounds = false
+        cell.layer.shadowOpacity = 0.8
+        cell.layer.shadowOffset = CGSize(width: -1, height: 1 )
+        cell.layer.shadowRadius = 2
         
         return cell
     }    
