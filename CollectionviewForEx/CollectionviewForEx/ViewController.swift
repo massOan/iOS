@@ -8,8 +8,7 @@ import UIKit
 class ViewController: UIViewController{
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    fileprivate let headerId = "headerId"
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,20 +39,9 @@ class ViewController: UIViewController{
                 var backgroundConfig = UIBackgroundConfiguration.listPlainCell()
                 cell.backgroundConfiguration = backgroundConfig
                 
-                
                 cell.contentConfiguration = contentConfiguration
-                  cell.accessories = [
-                      .outlineDisclosure(displayed: .always),
-                      .disclosureIndicator(displayed: .always),
-                      .reorder(displayed: .always),
-                      .checkmark(displayed: .always)
-                      
-                  ]
                 
             }
-            
-            
-            
             
         }
         
@@ -74,12 +62,9 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,
         Reminder.sampleData.count
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 100)
     }
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RemindCollectionViewCell", for: indexPath) as! RemindCollectionViewCell
@@ -101,7 +86,9 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,
         cell.layer.shadowOffset = CGSize(width: -1, height: 1 )
         cell.layer.shadowRadius = 2
         
+        
         return cell
+        
     }    
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
