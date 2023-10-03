@@ -16,16 +16,29 @@ class ViewController: UIViewController{
         self.collectionView.dataSource = self
         collectionView.backgroundColor = .systemBackground
         
-        collectionView.register(UINib(nibName: "RemindCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "RemindCollectionViewCell")
-        
-        collectionView.register(UINib(nibName: String(describing: CustomHeaderView.self), bundle: .main),
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: String(describing: CustomHeaderView.self))
-        collectionView.register(UINib(nibName: String(describing: CustomFooterView.self), bundle: .main),
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
-                                withReuseIdentifier: String(describing: CustomFooterView.self))
-        
+        cellRegister()
+//        collectionView.register(UINib(nibName: "RemindCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "RemindCollectionViewCell")
+//
+//        collectionView.register(UINib(nibName: String(describing: CustomHeaderView.self), bundle: .main),
+//                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+//                                withReuseIdentifier: String(describing: CustomHeaderView.self))
+//        collectionView.register(UINib(nibName: String(describing: CustomFooterView.self), bundle: .main),
+//                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+//                                withReuseIdentifier: String(describing: CustomFooterView.self))
+//
         reminderCellRegistration()
+        
+        func cellRegister() {
+            collectionView.register(UINib(nibName: "RemindCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "RemindCollectionViewCell")
+            
+            collectionView.register(UINib(nibName: String(describing: CustomHeaderView.self), bundle: .main),
+                                    forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                    withReuseIdentifier: String(describing: CustomHeaderView.self))
+            collectionView.register(UINib(nibName: String(describing: CustomFooterView.self), bundle: .main),
+                                    forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                                    withReuseIdentifier: String(describing: CustomFooterView.self))
+        
+        }
         
         func reminderCellRegistration() ->
         UICollectionView.CellRegistration<UICollectionViewListCell, Reminder > {
@@ -71,6 +84,10 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,
         
         let reminder = Reminder.sampleData[indexPath.item]
         
+        if(reminder.isComplete) {
+            cell.CompleteButton.setImage(UIImage(systemName: "checkmark.bubble.fill"), for: .normal)
+        }
+        
         cell.TodoTitle.text = reminder.title
         cell.TodoTitle.sizeToFit()
         
@@ -85,7 +102,6 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,
         cell.layer.shadowOpacity = 0.8
         cell.layer.shadowOffset = CGSize(width: -1, height: 1 )
         cell.layer.shadowRadius = 2
-        
         
         return cell
         
