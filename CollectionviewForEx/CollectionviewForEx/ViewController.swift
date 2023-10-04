@@ -17,15 +17,6 @@ class ViewController: UIViewController{
         collectionView.backgroundColor = .systemBackground
         
         cellRegister()
-//        collectionView.register(UINib(nibName: "RemindCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "RemindCollectionViewCell")
-//
-//        collectionView.register(UINib(nibName: String(describing: CustomHeaderView.self), bundle: .main),
-//                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-//                                withReuseIdentifier: String(describing: CustomHeaderView.self))
-//        collectionView.register(UINib(nibName: String(describing: CustomFooterView.self), bundle: .main),
-//                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
-//                                withReuseIdentifier: String(describing: CustomFooterView.self))
-//
         reminderCellRegistration()
         
         func cellRegister() {

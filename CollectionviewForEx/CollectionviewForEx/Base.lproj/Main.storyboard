@@ -31,9 +31,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gdd-Vt-9vn" secondAttribute="bottom" id="6R8-TZ-KJ7"/>
                             <constraint firstItem="gdd-Vt-9vn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GGF-a5-Aus"/>
                             <constraint firstItem="gdd-Vt-9vn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HEK-pb-Bdz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gdd-Vt-9vn" secondAttribute="bottom" id="XPh-6Y-X0e"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gdd-Vt-9vn" secondAttribute="trailing" id="w5z-8p-wwE"/>
                         </constraints>
                     </view>
@@ -43,7 +43,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="-2"/>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="K8W-Pg-0xQ">
+            <objects>
+                <tableViewController id="uof-gk-o9L" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Root View Controller" id="3sn-bm-PjU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="csM-d8-ak1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1694" y="9"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Yrg-dM-FGZ">
+            <objects>
+                <navigationController id="Olv-O8-iWo" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S6A-rP-jLx">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uof-gk-o9L" kind="relationship" relationship="rootViewController" id="bbu-W5-KDs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KYm-Ia-HLf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="9"/>
         </scene>
     </scenes>
     <resources>
