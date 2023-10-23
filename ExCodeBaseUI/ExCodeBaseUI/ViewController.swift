@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUI()
-        nextButton = setUpButton()
+        setUpButton()
     }
     
     func setUpButton() {
@@ -29,21 +29,16 @@ class ViewController: UIViewController {
             nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             nextButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             nextButton.widthAnchor.constraint(equalToConstant: 200)
-             
         ])
-    
-        
     }
-    
     
     
     private func setUI() {
     let  backgroundImage = UIImageView(frame: UIScreen.main.bounds)
          backgroundImage.backgroundColor = .green
          backgroundImage.contentMode = .scaleAspectFill
-//       self.view.insertSubview(backgroundImage, at: 0)
+
          self.view.addSubview(backgroundImage)
-        
         
         //addSubView, InsertSubView의 차이
         
