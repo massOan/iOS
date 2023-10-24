@@ -9,41 +9,49 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
-    var nextButton = UIButton()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        setUI()
-        setUpButton()
-    }
-    
-    func setUpButton() {
+        
+        let nextButton = UIButton()
+        
+        
+        nextButton.backgroundColor = .systemBlue
+        nextButton.setTitle("Next Button", for: .normal)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.configuration? = .filled()
-        nextButton.configuration?.title = "Next"
-        
-        NSLayoutConstraint.activate([
-            nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            nextButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            nextButton.widthAnchor.constraint(equalToConstant: 200)
-        ])
-    }
-    
-    
-    private func setUI() {
-    let  backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-         backgroundImage.backgroundColor = .green
-         backgroundImage.contentMode = .scaleAspectFill
+        self.view.addSubview(nextButton)
 
-         self.view.addSubview(backgroundImage)
+        NSLayoutConstraint.activate([
+            //            nextButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            //            nextButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            //
+            //            nextButton.heightAnchor.constraint(equalToConstant: 44),
+            //            nextButton.widthAnchor.constraint(equalToConstant: 200)
+            
+            nextButton.topAnchor.constraint(equalTo: self.view.topAnchor),
+            nextButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            nextButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            nextButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+            
+        ])
         
-        //addSubView, InsertSubView의 차이
+        nextButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        
+        
+        
         
     }
+
+    @objc  private func didTapButton() {
+        let vc = UIViewController()
+        vc.view.backgroundColor = .blue
+        //뷰컨 인스턴스 생성
+        self.navigationController?.pushViewController(vc, animated: true)
+//        self.present(vc, animated: true, completion: nil)
+        
+    }
+}
+
     
- }
 
 
