@@ -13,15 +13,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-            // guard let _ = (scene as? UIWindowScene) else { return } - 삭제
             guard let windowScene = (scene as? UIWindowScene) else { return }
-            let nav1 = UINavigationController()
+
+            let tabBarController = UITabBarController()
+
+//            let nav1 = UINavigationController()
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.windowScene = windowScene
-//            window?.rootViewController = ViewController()
-            let mainView = ViewController(nibName: nil, bundle: nil) //ViewController = Name of your controller
-            nav1.viewControllers = [mainView]
-            self.window!.rootViewController = nav1
+            let mainView = ViewController(nibName: nil, bundle: nil)
+            tabBarController.viewControllers = [mainView]
+            self.window!.rootViewController = tabBarController
             window?.makeKeyAndVisible()
     
         }

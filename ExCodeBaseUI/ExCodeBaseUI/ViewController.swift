@@ -7,41 +7,70 @@
 
 import UIKit
 
-class ViewController: UITabBarController {
+class ViewController: UITabBarController, UITabBarControllerDelegate {
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let nextButton = UIButton()
-        
-        nextButton.backgroundColor = .systemBlue
-        nextButton.setTitle("Next Button", for: .normal)
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(nextButton)
-        
-        NSLayoutConstraint.activate([
-            
-            nextButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            nextButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
-            nextButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-            nextButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor)
-            
-        ])
-        
-        nextButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        self.delegate = self
+         
+     }
+     
+     override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+         
+         // Create Tab one
+         let tabOne = SecondViewController()
+         let tabOneBarItem = UITabBarItem(title: "Tab 1", image: UIImage(named: "defaultImage.png"), selectedImage: UIImage(named: "selectedImage.png"))
+         
+         tabOne.tabBarItem = tabOneBarItem
+         
+         
+         // Create Tab two
+         let tabTwo = SettingViewController()
+         let tabTwoBarItem2 = UITabBarItem(title: "Tab 2", image: UIImage(named: "defaultImage2.png"), selectedImage: UIImage(named: "selectedImage2.png"))
+         
+         tabTwo.tabBarItem = tabTwoBarItem2
+         
+         
+         self.viewControllers = [tabOne, tabTwo]
+     }
+     
+     // UITabBarControllerDelegate method
+//     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+////         print("Selected \(viewController.title!)")
+//     }
+ }
         
 
-    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//        // Create Tab one
+//        let tabOne = ViewController()
+//        let tabOneBarItem = UITabBarItem(title: "Tab 1", image: UIImage(named: "defaultImage.png"), selectedImage: UIImage(named: "selectedImage.png"))
+//
+//        tabOne.tabBarItem = tabOneBarItem
+//
+//
+//        // Create Tab two
+//        let tabTwo = SecondViewController()
+//        let tabTwoBarItem2 = UITabBarItem(title: "Tab 2", image: UIImage(named: "defaultImage2.png"), selectedImage: UIImage(named: "selectedImage2.png"))
+//
+//        tabTwo.tabBarItem = tabTwoBarItem2
+//
+//
+//        self.viewControllers = [tabOne, tabTwo]
+//    }
+//
+//        //Delegate methods
+//        func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+//            print("Should select viewController: \(viewController.title ?? "") ?")
+//            return true;
+//        }
 
-    @objc  private func didTapButton() {
-        let vc = SecondViewController()
-        vc.view.backgroundColor = .blue
-        self.navigationController?.pushViewController(vc, animated: true)
-//        self.present(vc, animated: true, completion: nil)
-        
-    }
-}
+
 
     
 
