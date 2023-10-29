@@ -11,13 +11,14 @@ class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 //        view.backgroundColor = UIColor.systemMint
 //        self.title = "item1"
 //        print("item 1 loaded")
         
         let nextButton = UIButton()
         
-        nextButton.backgroundColor = .systemBlue
+        nextButton.backgroundColor = .systemMint
         nextButton.setTitle("Next Button", for: .normal)
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(nextButton)
@@ -32,26 +33,28 @@ class SecondViewController: UIViewController {
             
         ])
         
-        nextButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+//        nextButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
 
-//    private func setUI() {
-//    let  backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-//         backgroundImage.backgroundColor = .green
-//         backgroundImage.contentMode = .scaleAspectFill
+    
+
+    
 //
-//         self.view.addSubview(backgroundImage)
+//    @objc private func didTapButton() {
 //
-//        //addSubView, InsertSubView의 차이
+////        let firstVC = SecondViewController()
+//
+//        let naviC = UINavigationController(rootViewController:
+//                                            SecondViewController())
+//
+//        let vc = DetailViewController()
+////        vc.view.backgroundColor = .systemMint
+//        self.view.window?.rootViewController = naviC
+//
+//        naviC.pushViewController(vc, animated: true)
+//
+////        self.view.window?.rootViewController = SecondViewController()
+////      self.present(vc, animated: true, completion: nil)
+//
 //    }
-    
-    
-    @objc private func didTapButton() {
-        let vc = SecondViewController()
-        vc.view.backgroundColor = .blue
-        
-        self.navigationController?.pushViewController(vc, animated: true)
-//      self.present(vc, animated: true, completion: nil)
-        
-    }
 }

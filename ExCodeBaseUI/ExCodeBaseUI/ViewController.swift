@@ -40,7 +40,28 @@ class ViewController: UITabBarController, UITabBarControllerDelegate {
 //     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
 ////         print("Selected \(viewController.title!)")
 //     }
+    
+    
+    @objc private func didTapButton() {
+        
+//        let firstVC = SecondViewController()
+        
+        let naviC = UINavigationController(rootViewController:
+                                            ViewController())
+        
+        let vc = DetailViewController()
+//        vc.view.backgroundColor = .systemMint
+        self.view.window?.rootViewController = naviC
+
+        naviC.pushViewController(vc, animated: true)
+        
+//        self.view.window?.rootViewController = SecondViewController()
+//      self.present(vc, animated: true, completion: nil)
+        
+    }
  }
+
+
         
 
     

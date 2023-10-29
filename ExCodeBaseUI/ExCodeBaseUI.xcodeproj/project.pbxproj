@@ -16,6 +16,7 @@
 		A311477D2AE3A90600F85B66 /* ExCodeBaseUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311477C2AE3A90600F85B66 /* ExCodeBaseUIUITests.swift */; };
 		A311477F2AE3A90600F85B66 /* ExCodeBaseUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311477E2AE3A90600F85B66 /* ExCodeBaseUIUITestsLaunchTests.swift */; };
 		A314AAC02AEA3AFC002DA8EC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314AABF2AEA3AFC002DA8EC /* SettingViewController.swift */; };
+		A314AAC22AEE880F002DA8EC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314AAC12AEE880F002DA8EC /* DetailViewController.swift */; };
 		A34E0FED2AE6C687009C068C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34E0FEC2AE6C687009C068C /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		A311477C2AE3A90600F85B66 /* ExCodeBaseUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCodeBaseUIUITests.swift; sourceTree = "<group>"; };
 		A311477E2AE3A90600F85B66 /* ExCodeBaseUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCodeBaseUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A314AABF2AEA3AFC002DA8EC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		A314AAC12AEE880F002DA8EC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A34E0FEC2AE6C687009C068C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 				A31147692AE3A90600F85B66 /* Info.plist */,
 				A34E0FEC2AE6C687009C068C /* SecondViewController.swift */,
 				A314AABF2AEA3AFC002DA8EC /* SettingViewController.swift */,
+				A314AAC12AEE880F002DA8EC /* DetailViewController.swift */,
 			);
 			path = ExCodeBaseUI;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				A314AAC02AEA3AFC002DA8EC /* SettingViewController.swift in Sources */,
 				A34E0FED2AE6C687009C068C /* SecondViewController.swift in Sources */,
 				A31147602AE3A90500F85B66 /* ViewController.swift in Sources */,
+				A314AAC22AEE880F002DA8EC /* DetailViewController.swift in Sources */,
 				A311475C2AE3A90500F85B66 /* AppDelegate.swift in Sources */,
 				A311475E2AE3A90500F85B66 /* SceneDelegate.swift in Sources */,
 			);
