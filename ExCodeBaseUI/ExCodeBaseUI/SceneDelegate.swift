@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            let nav1 = UINavigationController()
             window = UIWindow(frame: UIScreen.main.bounds)
             window?.windowScene = windowScene
-            let mainView = ViewController(nibName: nil, bundle: nil)
+            let mainView = TapBarController(nibName: nil, bundle: nil)
             tabBarController.viewControllers = [mainView]
             self.window!.rootViewController = tabBarController
             window?.makeKeyAndVisible()

@@ -14,15 +14,6 @@ class DetailViewController: UIViewController {
             
         self.view.backgroundColor = .blue
         
-        
-        func dismissViewController() {
-            self.dismiss(animated: true)
-        }
-        
-        // Navigation Controller
-        func popViewController() {
-            self.navigationController?.popViewController(animated: true)
-        }
 //        let nextButton = UIButton()
 //
 //        nextButton.backgroundColor = .systemMint

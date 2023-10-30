@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class HomeController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,23 +15,23 @@ class SecondViewController: UIViewController {
 //        view.backgroundColor = UIColor.systemMint
 //        self.title = "item1"
 //        print("item 1 loaded")
-        
-        let nextButton = UIButton()
-        
-        nextButton.backgroundColor = .systemMint
-        nextButton.setTitle("Next Button", for: .normal)
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(nextButton)
-        
-        
-        NSLayoutConstraint.activate([
-            
-            nextButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            nextButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
-            nextButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
-            nextButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor)
-            
-        ])
+//        
+//        let nextButton = UIButton()
+//        
+//        nextButton.backgroundColor = .systemMint
+//        nextButton.setTitle("Next Button", for: .normal)
+//        nextButton.translatesAutoresizingMaskIntoConstraints = false
+//        self.view.addSubview(nextButton)
+//        
+//        
+//        NSLayoutConstraint.activate([
+//            
+//            nextButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+//            nextButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+//            nextButton.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+//            nextButton.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor)
+//            
+//        ])
         
 //        nextButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
