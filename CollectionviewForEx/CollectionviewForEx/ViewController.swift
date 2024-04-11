@@ -88,7 +88,7 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource,
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 10
         cell.layer.borderWidth = 1
-        
+        cell.layer.borderWidth = 2
         cell.layer.masksToBounds = false
         cell.layer.shadowOpacity = 0.8
         cell.layer.shadowOffset = CGSize(width: -1, height: 1 )
